@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: amalitech-idempotency-gateway
+    runtime: java
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/idempotency-gateway-1.0.0.jar
+    envVars:
+      - key: JAVA_VERSION
+        value: 21
+    plan: free
